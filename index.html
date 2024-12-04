@@ -1,37 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Whales MiniApp - Home</title>
-  <style>
-    body {
-      background-color: black;
-      color: white;
-      text-align: center;
-      font-family: Arial, sans-serif;
-    }
-    .button {
-      background-color: red;
-      color: white;
-      padding: 10px;
-      margin: 10px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    .button:hover {
-      background-color: darkred;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whales MiniApp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f0f8ff;
+        }
+        nav {
+            background-color: #007bff;
+            color: white;
+            padding: 1em;
+        }
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        section {
+            padding: 2em;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-  <h1>Your Score</h1>
-  <h2>4,878 WHALES</h2>
-  <h3>Tasks</h3>
-  <button class="button">Subscribe to Telegram</button>
-  <button class="button">Subscribe to Twitter</button>
-  <button class="button">Refer a Friend</button>
+    <nav>
+        <a href="#" id="home-link">🏠 Home</a>
+        <a href="#" id="invite-link">🤝 Invite Friends</a>
+        <a href="#" id="leaderboard-link">🏆 Leaderboard</a>
+    </nav>
+    <section id="home">
+        <h1>Welcome to WhalesCoin!</h1>
+        <p>Your current score: <span id="score">0</span> WHALES</p>
+        <p>Complete tasks to earn more WHALES!</p>
+    </section>
+    <section id="invite" class="hidden">
+        <h1>Invite Friends</h1>
+        <p>Share this referral link with your friends:</p>
+        <input type="text" id="referral-link" readonly>
+        <button onclick="copyReferralLink()">Copy Link</button>
+    </section>
+    <section id="leaderboard" class="hidden">
+        <h1>Leaderboard</h1>
+        <ul id="leaderboard-list"></ul>
+    </section>
+    <script>
+        // Navigation
+        const homeLink = document.getElementById('home-link');
+        const inviteLink = document.getElementById('invite-link');
+        const leaderboardLink = document.getElementById('leaderboard-link');
+
+        const homeSection = document.getElementById('home');
+        const inviteSection = document.getElementById('invite');
+        const leaderboardSection = document.getElementById('leaderboard');
+
+        homeLink.addEventListener('click', () => {
+            showSection('home');
+        });
+        inviteLink.addEventListener('click', () => {
+            showSection('invite');
+        });
+        leaderboardLink.addEventListener('click', () => {
+            showSection('leaderboard');
+        });
+
+        function showSection(section) {
+            homeSection.classList.add('hidden');
+            inviteSection.classList.add('hidden');
+            leaderboardSection.classList.add('hidden');
+
+            if (section === 'home') homeSection.classList.remove('hidden');
+            if (section === 'invite') inviteSection.classList.remove('hidden');
+            if (section === 'leaderboard') leaderboardSection.classList.remove('hidden');
+        }
+
+        // Dynamic Data (Example)
+        document.getElementById('score').innerText = 4878; // Replace with dynamic score
+        document.getElementById('referral-link').value = 'https://t.me/WHALESCOINBOT?start=12345'; // Replace dynamically
+
+        const leaderboardList = document.getElementById('leaderboard-list');
+        const leaderboardData = [
+            { username: 'User1', score: 1000 },
+            { username: 'User2', score: 950 },
+            { username: 'User3', score: 900 },
+        ]; // Replace with dynamic data
+        leaderboardData.forEach(user => {
+            const li = document.createElement('li');
+            li.textContent = `${user.username} - ${user.score} WHALES`;
+            leaderboardList.appendChild(li);
+        });
+
+        // Copy referral link
+        function copyReferralLink() {
+            const referralInput = document.getElementById('referral-link');
+            referralInput.select();
+            document.execCommand('copy');
+            alert('Referral link copied!');
+        }
+    </script>
 </body>
 </html>
