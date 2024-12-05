@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Check-In</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .top-bar {
+            background-color: #ffcc00;
+            height: 4px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 20px 0;
+        }
+
+        .subtext {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .reward {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .icon-container {
+            margin: 20px auto;
+            width: 120px;
+            height: 120px;
+            background: #ffa500;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-container img {
+            width: 70%;
+        }
+
+        .message {
+            font-size: 1em;
+            margin: 20px;
+        }
+
+        .continue-btn {
+            background-color: #ffcc00;
+            color: #1a1a1a;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+
+        .continue-btn:hover {
+            background-color: #e6b800;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar"></div>
+    <h1>Day 1</h1>
+    <div class="subtext">Daily Check-In</div>
+    <div class="reward">+500 ALPHADOGS</div>
+    <div class="icon-container">
+        <img src="icon.png" alt="Reward Icon">
+    </div>
+    <div class="message">Visit daily to maintain your streak! If you miss a day, you lose your progress and start afresh 😎</div>
+    <a href="whalescoinmainpage/main.html" class="btn-continue" style="text-decoration: none; display: inline-block; padding: 10px 20px; background-color: red; color: white; border-radius: 5px;">Continue</a>
+
+    <script>
+        function goToMainPage() {
+            window.location.href = "main.html"; /* Replace main.html with your actual main page file */
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checking Your Account</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #ffcc00;
+        }
+
+        .progress-container {
+            margin-bottom: 30px;
+        }
+
+        .progress-item {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .progress-bar {
+            background-color: #333;
+            border-radius: 5px;
+            overflow: hidden;
+            height: 20px;
+            width: 100%;
+        }
+
+        .progress-fill {
+            background-color: #ffcc00;
+            height: 100%;
+            width: 0%;
+            transition: width 2s ease;
+        }
+
+        .progress-label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .completed {
+            color: #ffcc00;
+            font-size: 1.2em;
+        }
+
+        button {
+            background-color: #ffcc00;
+            border: none;
+            color: #1a1a1a;
+            padding: 15px 30px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            text-transform: uppercase;
+        }
+
+        button:hover {
+            background-color: #e6b800;
+        }
+    </style>
+</head>
+<body>
+    <h1>Checking Your Account</h1>
+
+    <div class="progress-container">
+        <div class="progress-item">
+            <div class="progress-label">Account Age Verified <span class="completed" id="check1">✔</span></div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="bar1"></div>
+            </div>
+        </div>
+
+        <div class="progress-item">
+            <div class="progress-label">Activity Level Analyzed <span class="completed" id="check2">✔</span></div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="bar2"></div>
+            </div>
+        </div>
+
+        <div class="progress-item">
+            <div class="progress-label">Telegram Premium Checked <span class="completed" id="check3">✔</span></div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="bar3"></div>
+            </div>
+        </div>
+
+        <div class="progress-item">
+            <div class="progress-label">OG Status Confirmed <span class="completed" id="check4">✔</span></div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="bar4"></div>
+            </div>
+        </div>
+    </div>
+
+    <button class="cta-button" onclick="window.location.href='rewards.html'">Continue</button>
+
+    <script>
+        function animateProgress() {
+            // Progress animation
+            setTimeout(() => document.getElementById('bar1').style.width = '100%', 500);
+            setTimeout(() => document.getElementById('check1').style.visibility = 'visible', 2500);
+
+            setTimeout(() => document.getElementById('bar2').style.width = '100%', 3000);
+            setTimeout(() => document.getElementById('check2').style.visibility = 'visible', 5000);
+
+            setTimeout(() => document.getElementById('bar3').style.width = '100%', 5500);
+            setTimeout(() => document.getElementById('check3').style.visibility = 'visible', 7500);
+
+            setTimeout(() => document.getElementById('bar4').style.width = '100%', 8000);
+            setTimeout(() => document.getElementById('check4').style.visibility = 'visible', 10000);
+        }
+
+        function proceed() {
+            window.location.href = "main.html"; // Redirect to main page
+        }
+
+        // Hide all check marks initially
+        document.getElementById('check1').style.visibility = 'hidden';
+        document.getElementById('check2').style.visibility = 'hidden';
+        document.getElementById('check3').style.visibility = 'hidden';
+        document.getElementById('check4').style.visibility = 'hidden';
+
+        // Start animation
+        animateProgress();
+    </script>
+</body>
+</html>

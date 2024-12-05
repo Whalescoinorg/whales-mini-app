@@ -1,0 +1,85 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Header */
+.header {
+  background-color: red;
+  padding: 20px;
+  text-align: center;
+}
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+/* Section Styling */
+section {
+  padding: 20px;
+  text-align: center;
+}
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #111;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+.task img {
+  width: 30px;
+  height: auto;
+  margin-right: 10px;
+}
+.task div {
+  flex: 1;
+  text-align: left;
+}
+.task-reward {
+  margin-top: 5px;
+  color: #ffcc00;
+  font-size: 14px;
+}
+.btn-task {
+  background: grey;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.btn-task:hover {
+  background: #666;
+}
+
+/* Footer Navigation */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #111;
+  display: flex;
+  justify-content: space-around;
+}
+.nav-item {
+  text-align: center;
+  color: white;
+}
+.nav-item img {
+  width: 30px;
+  height: auto;
+  margin-bottom: 5px;
+}
+.nav-item p {
+  margin: 0;
+  font-size: 14px;
+}
+.nav-item.active {
+  color: red;
+}

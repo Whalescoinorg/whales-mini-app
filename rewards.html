@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rewards</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #000; /* Black background */
+            color: #fff;
+        }
+
+        .header-line {
+            width: 80%;
+            height: 5px;
+            background-color: #FFD700; /* Gold color */
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .reward-logo {
+            width: 150px;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .reward-text {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .big-red-button {
+            background-color: #FF0000; /* Red color */
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border: none;
+            padding: 15px 30px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        .big-red-button:hover {
+            background-color: #CC0000; /* Slightly darker red */
+        }
+    </style>
+</head>
+<body>
+    <div class="header-line"></div>
+    <h1>Welcome to WhalesCoin!</h1>
+    <p class="reward-text">Here is your WhalesCoin rewards:</p>
+    <img src="logo.png" alt="Whales Logo" class="reward-logo">
+    <h2>+6,000 WHALES</h2>
+    <p class="reward-text">If you missed Dogs, don't miss Whales!</p>
+    <button class="big-red-button" onclick="goToCheckInPage()">Continue</button>
+
+    <script>
+        function goToCheckInPage() {
+            window.location.href = "checkin.html"; // Redirects to the Daily Check-In page
+        }
+    </script>
+</body>
+</html>
