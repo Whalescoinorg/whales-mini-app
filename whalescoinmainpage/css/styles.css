@@ -64,22 +64,41 @@ section {
   bottom: 0;
   width: 100%;
   background: #111;
-  display: flex;
-  justify-content: space-around;
+  display: flex; /* Align items horizontally */
+  justify-content: space-around; /* Even spacing between items */
+  padding: 10px 0; /* Adds spacing inside the footer */
 }
+
 .nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   color: white;
+  padding: 10px; /* Adds spacing for button appearance */
+  background-color: #333; /* Background color to make them look like buttons */
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor for button effect */
+  width: 80px; /* Ensures uniform width */
 }
+
 .nav-item img {
   width: 30px;
   height: auto;
   margin-bottom: 5px;
 }
+
 .nav-item p {
   margin: 0;
   font-size: 14px;
 }
+
 .nav-item.active {
-  color: red;
+  color: #ffcc00; /* Highlight active item */
+  background-color: red; /* Changes background for active */
+}
+
+.nav-item:hover {
+  background-color: #555; /* Hover effect for better UX */
 }
